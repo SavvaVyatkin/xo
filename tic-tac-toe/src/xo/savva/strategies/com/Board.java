@@ -249,24 +249,6 @@ public class Board implements BoardInterface {
 			this.board[1][1] = o2;
 			return 4;
 		}
-		
-//		// check corners 00 02 20 22 
-//		if (checkCorner (0,0,o2)) {
-//			this.board[0][0] = o2;
-//			return 0;
-//		}
-//		if (checkCorner (0,2,o2)) {
-//			this.board[0][2] = o2;
-//			return 2;
-//		}
-//		if (checkCorner (2,0,o2)) {
-//			this.board[2][0] = o2;
-//			return 6;
-//		}
-//		if (checkCorner (2,2,o2)) {
-//			this.board[2][2] = o2;
-//			return 8;
-//		}
 		for (int i = 0; i < 3; i++)
 			for (int j = 0; j < 3; j++)
 				if (this.board[i][j].equals(" ")) {
@@ -280,12 +262,6 @@ public class Board implements BoardInterface {
 		if (this.board[i][j].equals(" ")) return true;
 		return false;
 	}
-//	
-//	private boolean checkCorner(int i, int j, String o2) {
-//		if (!this.board[i][j].equals(" ")) return false;
-//		if (checkRow(i, o2) && checkColumn(j, o2)) return true;
-//		return false;
-//	}
 
 	private boolean checkColumn(int j, String o2) {
 		String enemy = (o2.equals(X)) ? O : X;

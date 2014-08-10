@@ -26,7 +26,6 @@ public class TicTacToe implements ActionListener {
 	private JButton button7 = new JButton("");
 	private JButton button8 = new JButton("");
 	private JButton button9 = new JButton("");
-	private String letter;
 	private static ImageIcon image = new ImageIcon("");
 	private static ImageIcon image2 = new ImageIcon("");
 	private int count = 0;
@@ -75,7 +74,6 @@ public class TicTacToe implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		count++;
 
-		letter = Board.X;
 		int i = 0,j = 0;
 		// displays if x or y
 		if (event.getSource() == button1) {
@@ -122,7 +120,7 @@ public class TicTacToe implements ActionListener {
 		if (bb.getBoardElement(i, j).equals(" ")) {
 			bb.setBoardElement(Board.X, i, j);
 			if (bb.isWin()) {
-//				System.out.println("Computer Lost");
+//	Computer Lost
 				compWin = true;
 			} else {
 				int m = bb.winMove(Board.O);
@@ -141,23 +139,21 @@ public class TicTacToe implements ActionListener {
 		}
 		// sees who wins
 		if (win) {
-			//JOptionPane.showMessageDialog(null, " Computer Wins!");
+			//Computer Wins!
 			whowins = "Computer Wins!";
 			question();
 		} else if (compWin) {
-			//JOptionPane.showMessageDialog(null, " You WIN!");
+			//You WIN!
 			whowins = "You Win!";
 			question();
 		} else if (count == 5) {
-			//JOptionPane.showMessageDialog(null, "Tie Game!");
+			//Tie Game!
 			whowins = "Tie Game!";
 			question();
 		}
 }
 	private void question() {
 		int dialogButton = JOptionPane.showConfirmDialog (null, "Continue?", whowins, JOptionPane.YES_NO_OPTION);
-//		Object possibleValues = continueOrOver();
-//		if ("No".equals(possibleValues)) gameOver();
 		if(dialogButton == JOptionPane.NO_OPTION) {
 		    System.exit(0);}
 		continueGame();
@@ -222,14 +218,6 @@ public class TicTacToe implements ActionListener {
 		image2 = new ImageIcon("images/0.jpg");
 	}
 
-	private Object continueOrOver() {
-		Object[] possibleValues = { "Yes", "No" };
-		Object selectedValue = JOptionPane.showInputDialog(null,
-		"Continue?", whowins,
-		JOptionPane.INFORMATION_MESSAGE, null,
-		possibleValues, possibleValues[0]);
-		return selectedValue;
-	}
 	private static Object XorO() {
 		Object[] possibleValues = { "X", "O" };
 		Object selectedValue = JOptionPane.showInputDialog(null,
