@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import xo.savva.strategies.com.Board;
+import xo.savva.strategies.com.BoardDumb;
 import xo.savva.strategies.com.BoardHard;
 import xo.savva.strategies.com.BoardInterface;
 
@@ -66,8 +67,6 @@ public class TicTacToe implements ActionListener {
 		window.setVisible(true);
 	}
 	public void gameOver() {
-//		JOptionPane.showMessageDialog(null, "Game Over", "Game Over", JOptionPane.YES_NO_OPTION);
-//		JOptionPane.showMessageDialog(null, "Game Over");
 		System.exit(0);
 		}
 
@@ -166,9 +165,13 @@ public class TicTacToe implements ActionListener {
 	}
 	private static void difficulty(){
 		Object possibleValues = Difficulty();
+		if ("Easy".equals(possibleValues)) easyDifficulty();
 		if ("Medium".equals(possibleValues)) mediumDifficulty();
 		if ("Hard".equals(possibleValues)) hardDifficulty();
 		selection();
+	}
+	private static void easyDifficulty(){
+		bb= new BoardDumb();
 	}
 	private static  void mediumDifficulty() {
 		bb =  new Board();
@@ -227,7 +230,7 @@ public class TicTacToe implements ActionListener {
 		return selectedValue;
 	}
 	private static Object Difficulty() {
-		Object[] possibleValues = { "Medium", "Hard" };
+		Object[] possibleValues = { "Easy", "Medium", "Hard" };
 		Object selectedValue = JOptionPane.showInputDialog(null,
 		"Select Difficulty", "Input",
 		JOptionPane.INFORMATION_MESSAGE, null,
