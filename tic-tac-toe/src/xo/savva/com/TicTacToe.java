@@ -26,7 +26,7 @@ public class TicTacToe implements ActionListener {
 	private JButton button7 = new JButton("");
 	private JButton button8 = new JButton("");
 	private JButton button9 = new JButton("");
-	private String letter = ("");
+	private String letter;
 	private static ImageIcon image = new ImageIcon("");
 	private static ImageIcon image2 = new ImageIcon("");
 	private int count = 0;

@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * @author Big
+ * @author Savva Vyatkin
  * 
  */
 public class Board implements BoardInterface {
