@@ -167,7 +167,7 @@ public class TicTacToe implements ActionListener {
 		Object possibleValues = Difficulty();
 		if ("Easy".equals(possibleValues)) easyDifficulty();
 		if ("Medium".equals(possibleValues)) mediumDifficulty();
-		if ("Hard".equals(possibleValues)) hardDifficulty();
+		if ("Impossible".equals(possibleValues)) hardDifficulty();
 		selection();
 	}
 	private static void easyDifficulty(){
@@ -230,7 +230,7 @@ public class TicTacToe implements ActionListener {
 		return selectedValue;
 	}
 	private static Object Difficulty() {
-		Object[] possibleValues = { "Easy", "Medium", "Hard" };
+		Object[] possibleValues = { "Easy", "Medium", "Impossible" };
 		Object selectedValue = JOptionPane.showInputDialog(null,
 		"Select Difficulty", "Input",
 		JOptionPane.INFORMATION_MESSAGE, null,
